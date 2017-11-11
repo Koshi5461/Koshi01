@@ -149,6 +149,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.oculus.HackRiddle
+    Standalone: com.oculus.UnitySample
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19
@@ -242,6 +243,10 @@ PlayerSettings:
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings:
   - m_BuildTarget: Android
+    m_Enabled: 1
+    m_Devices:
+    - Oculus
+  - m_BuildTarget: Standalone
     m_Enabled: 1
     m_Devices:
     - Oculus
