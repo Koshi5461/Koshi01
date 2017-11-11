@@ -159,6 +159,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 65b3d80efe95dfe4e9e1da7fce4e805b, type: 2}
+    - target: {fileID: 9500000, guid: f0d9c91ab7595ad4aa2fa05c360cf725, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 0a9ddda5ba8cfe94d851986c858c5a63, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0d9c91ab7595ad4aa2fa05c360cf725, type: 3}
   m_IsPrefabParent: 0
