@@ -13,6 +13,7 @@ public class TrainingScript : MonoBehaviour {
     public GameObject instructionBox;
     public GameObject cprImage;
     public GameObject handAnim;
+    public GameObject compressionRateText;
 
     bool isHandAnimationShownOnce = false;
 	// Use this for initialization
@@ -43,16 +44,25 @@ public class TrainingScript : MonoBehaviour {
                 handAnim.SetActive(true);
                 StartCoroutine(PlayHandAnimation());
             }
-            if (pumpBox.GetComponent<PumpScript>().countPump >= 5)
+            //if (pumpBox.GetComponent<PumpScript>().countPump > 10)
             {
-                cprImage.SetActive(false);
-                message = "Good! Press this button to continue";
+                Debug.Log("Count:"+pumpBox.GetComponent<PumpScript>().countPump);
+                compressionRateText.GetComponent<TextMesh>().text="Your Pump Rate="+ pumpBox.GetComponent<PumpScript>().countPump * 3.0f + "/18 seconds\n"+
+                    "Recommended = 30 pumps / 18 sec";
+                message = "Start Performing CPR \n\n"+"Press continue when done.";
+
             }
-        } else if (triggerBox.GetComponent<TriggerScript>().step > 2 && pumpBox.GetComponent<PumpScript>().countPump >= 5)
-        {
-            cprImage.SetActive(false);
-            message = "Good! Press this button to continue";
+            //if (pumpBox.GetComponent<PumpScript>().countPump >= 5)
+            //{
+            //    cprImage.SetActive(false);
+            //    message = "Good! Press this button to continue";
+            //}
         }
+        //else if (triggerBox.GetComponent<TriggerScript>().step > 2 && pumpBox.GetComponent<PumpScript>().countPump >= 5)
+        //{
+        //    cprImage.SetActive(false);
+        //    message = "Good! Press this button to continue";
+        //}
         instructionBox.GetComponent<TextMesh>().text = message;
 
     }
