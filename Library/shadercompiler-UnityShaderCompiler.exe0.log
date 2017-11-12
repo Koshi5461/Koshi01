@@ -1,2 +1,66 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=1461 outsize=704 ok=1
+Cmd: preprocess
+  insize=1311 outsize=416 ok=1
+Cmd: preprocess
+  error: 1 plat 20 at (0): texcoord1 missing from surface shader's vertex input struct (appdata_graphic_dynamic), disabled lightmaps and meta pass generation
+  error: 1 plat 20 at (0): texcoord2 missing from surface shader's vertex input struct (appdata_graphic_dynamic), disabled dynamic GI and meta pass generation
+  insize=1756 outsize=910 ok=1
+Cmd: preprocess
+  insize=935 outsize=369 ok=1
+Cmd: preprocess
+  insize=2344 outsize=815 ok=1
+Cmd: preprocess
+  insize=2076 outsize=806 ok=1
+Cmd: preprocess
+  insize=1079 outsize=340 ok=1
+Cmd: preprocess
+  error: 1 plat 20 at (0): texcoord1 missing from surface shader's vertex input struct (appdata_graphic_dynamic), disabled lightmaps and meta pass generation
+  error: 1 plat 20 at (0): texcoord2 missing from surface shader's vertex input struct (appdata_graphic_dynamic), disabled dynamic GI and meta pass generation
+  insize=1681 outsize=1213 ok=1
+Cmd: preprocess
+  insize=1718 outsize=322 ok=1
+Cmd: preprocess
+  insize=947 outsize=304 ok=1
+Cmd: preprocess
+  insize=2191 outsize=596 ok=1
+Cmd: preprocess
+  error: 1 plat 20 at (0): texcoord1 missing from surface shader's vertex input struct (appdata_graphic_baked), disabled lightmaps and meta pass generation
+  error: 1 plat 20 at (0): texcoord2 missing from surface shader's vertex input struct (appdata_graphic_baked), disabled dynamic GI and meta pass generation
+  insize=1767 outsize=1170 ok=1
+Cmd: preprocess
+  insize=1813 outsize=301 ok=1
+Cmd: preprocess
+  insize=1281 outsize=1235 ok=1
+Cmd: preprocess
+  insize=1341 outsize=510 ok=1
+Cmd: preprocess
+  insize=807 outsize=212 ok=1
+Cmd: preprocess
+  insize=1528 outsize=570 ok=1
+Cmd: preprocess
+  insize=2949 outsize=1144 ok=1
+Cmd: preprocess
+  insize=905 outsize=262 ok=1
+Cmd: preprocess
+  insize=1654 outsize=705 ok=1
+Cmd: preprocess
+  insize=336 outsize=336 ok=1
+Cmd: preprocess
+  insize=1792 outsize=396 ok=1
+Cmd: preprocess
+  insize=1004 outsize=1804 ok=1
+Cmd: preprocess
+  error: 1 plat 20 at (0): texcoord1 missing from surface shader's vertex input struct (appdata_graphic_dynamic), disabled lightmaps and meta pass generation
+  error: 1 plat 20 at (0): texcoord2 missing from surface shader's vertex input struct (appdata_graphic_dynamic), disabled dynamic GI and meta pass generation
+  insize=1607 outsize=917 ok=1
+Cmd: preprocess
+  insize=1745 outsize=1632 ok=1
+Cmd: preprocess
+  error: 1 plat 20 at (0): texcoord1 missing from surface shader's vertex input struct (appdata_graphic_baked), disabled lightmaps and meta pass generation
+  error: 1 plat 20 at (0): texcoord2 missing from surface shader's vertex input struct (appdata_graphic_baked), disabled dynamic GI and meta pass generation
+  insize=1738 outsize=1160 ok=1
+Cmd: preprocess
+  insize=982 outsize=335 ok=1

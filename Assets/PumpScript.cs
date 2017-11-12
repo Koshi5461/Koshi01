@@ -5,7 +5,9 @@ using UnityEngine;
 public class PumpScript : MonoBehaviour {
     public int countPump = 0;
     public GameObject handAnim;
-    public float time = 0;
+    float time = 0;
+
+    public int timeInSec = 0;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,7 +18,14 @@ public class PumpScript : MonoBehaviour {
         if (countPump >= 1)
         {
             time += Time.deltaTime;
-            Debug.Log("Time="+time);
+            timeInSec=(int)time;
+            Debug.Log(timeInSec);
+        }
+        if (timeInSec == 6)
+        {
+           
+            time = 0;
+            countPump = 0;
         }
     }
 
