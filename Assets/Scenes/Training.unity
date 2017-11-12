@@ -3602,7 +3602,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1701793934}
-  m_LocalRotation: {x: -0.015782863, y: -0.7006986, z: 0.71320534, w: 0.010521457}
+  m_LocalRotation: {x: -0.015782861, y: -0.70069855, z: 0.7132053, w: 0.010521456}
   m_LocalPosition: {x: -5.8614902, y: -0.35567012, z: 0.007990647}
   m_LocalScale: {x: 23.891945, y: 12.8603, z: 0.6148311}
   m_Children:
@@ -3690,7 +3690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   step: 0
-  pumpBox: {fileID: 0}
+  audioSource: {fileID: 791436662}
 --- !u!4 &1773056200
 Transform:
   m_ObjectHideFlags: 0
@@ -4801,6 +4801,11 @@ MonoBehaviour:
   cprImage: {fileID: 398906243}
   handAnim: {fileID: 885100761}
   compressionRateText: {fileID: 198959210}
+  audioSource: {fileID: 791436662}
+  source1: {fileID: 8300000, guid: 157980df3c8f90747b5573cbf05e6d8f, type: 3}
+  source2: {fileID: 8300000, guid: eaacfd1ffb3e3e14fab4bc4491eb08ae, type: 3}
+  source3: {fileID: 8300000, guid: 03e2030199c12904c8e092820943c0cf, type: 3}
+  source4: {fileID: 8300000, guid: 7a95d5faddfeae44ea82f94ffa52dac4, type: 3}
 --- !u!1 &2088040471
 GameObject:
   m_ObjectHideFlags: 0

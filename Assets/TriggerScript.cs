@@ -6,7 +6,7 @@ public class TriggerScript : MonoBehaviour
 {
 
     public int step = 0;
-    public GameObject pumpBox;
+    public AudioSource audioSource;
 
     // Use this for initialization
     void Start()
@@ -17,7 +17,7 @@ public class TriggerScript : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.transform.name == "palm")
+        if (other.transform.name == "palm" && !audioSource.isPlaying)
         {
             step = step + 1;
         }
