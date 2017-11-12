@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PumpScript : MonoBehaviour {
     public int countPump = 0;
+    public GameObject handAnim;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,6 +17,11 @@ public class PumpScript : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
+        //if (handAnim.activeInHierarchy)
+        //{
+        //    handAnim.SetActive(false);
+        //}
+
         if (other.transform.name == "palm")
         {
             countPump++;

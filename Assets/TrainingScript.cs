@@ -12,14 +12,19 @@ public class TrainingScript : MonoBehaviour {
     public GameObject pumpBox;
     public GameObject instructionBox;
     public GameObject cprImage;
+    public GameObject handAnim;
+
+    bool isHandAnimationShownOnce = false;
 	// Use this for initialization
 	void Start () {
         pumpBox.SetActive(false);
         cprImage.SetActive(false);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        handAnim.SetActive(false);
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         Debug.Log("Count:"+triggerBox.GetComponent<TriggerScript>().step);
         if(triggerBox.GetComponent<TriggerScript>().step == 1)
         {
@@ -33,7 +38,11 @@ public class TrainingScript : MonoBehaviour {
                 "Push down in the center of the chest as shown\n in the image 2-2.4 inches 30 times.\n" +
                 "Pump hard and fast at the rate of\n 100-120/minute, faster than once per second.";
             pumpBox.SetActive(true);
-
+            if (!isHandAnimationShownOnce && !handAnim.activeInHierarchy)
+            {
+                handAnim.SetActive(true);
+                StartCoroutine(PlayHandAnimation());
+            }
             if (pumpBox.GetComponent<PumpScript>().countPump >= 5)
             {
                 cprImage.SetActive(false);
@@ -48,4 +57,11 @@ public class TrainingScript : MonoBehaviour {
 
     }
 
+
+    public IEnumerator PlayHandAnimation()
+    {
+        yield return new WaitForSeconds(10);
+        handAnim.SetActive(false);
+        isHandAnimationShownOnce = true;
+    }
 }
