@@ -19,8 +19,10 @@ public class SubjectScript : MonoBehaviour {
     public GameObject cprImage;
     public GameObject background1;
     public GameObject continueButton;
+    public GameObject MobileText;
     public AudioSource playerAudio;
 
+    public bool mobileMsgShown=false;
     public AudioClip source1;
 
 	// Use this for initialization
@@ -40,7 +42,7 @@ public class SubjectScript : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         {
-            if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) > 5.0f)
+            if (Vector3.Distance(this.gameObject.transform.position, player.transform.position) > 5.0f && !(thisAnimator.GetCurrentAnimatorStateInfo(0).IsName("fall") || thisAnimator.GetCurrentAnimatorStateInfo(0).IsName("laying")))
             {
                 this.gameObject.transform.Translate(Vector3.forward * Time.deltaTime);
             }
@@ -65,6 +67,11 @@ public class SubjectScript : MonoBehaviour {
                 phone.SetActive(true);
                 is911Called = phone.GetComponent<PhoneTriggerScript>().isPhonePicked;
             }
+            else if (didHeGoThere && !phone.activeInHierarchy && !mobileMsgShown)
+            {
+                mobileMsgShown = true;
+                StartCoroutine(ShowMessageGood());
+            }
             else
             {
                 phone.SetActive(false);
@@ -75,12 +82,14 @@ public class SubjectScript : MonoBehaviour {
                 //instructionBox.transform.parent.gameObject.SetActive(true);
                 instructionBox.transform.parent.gameObject.SetActive(false);
             }
-            if (!is911Called && pumpBox.GetComponent<PumpScriptPractice>().countPump > 0)
+            if (!is911Called && pumpBox.GetComponent<PumpScriptPractice>().countPump > 0 && !mobileMsgShown)
             {
-                instructionBackground.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-                message = "You forgot to call 911!";
-                instructionBox.GetComponent<TextMesh>().text = message;
-                instructionBox.transform.parent.gameObject.SetActive(true);
+                //instructionBackground.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+                //message = "You forgot to call 911!";
+                //instructionBox.GetComponent<TextMesh>().text = message;
+                //instructionBox.transform.parent.gameObject.SetActive(true);
+                mobileMsgShown = true;
+                StartCoroutine(ShowMessageBad());
             }
             else if (is911Called && pumpBox.GetComponent<PumpScriptPractice>().countPump > 0)
             {
@@ -90,11 +99,36 @@ public class SubjectScript : MonoBehaviour {
                 //instructionBox.transform.parent.gameObject.SetActive(false);
                 compressionRateText.GetComponent<TextMesh>().text = "Your Pump Rate=" + pumpBox.GetComponent<PumpScriptPractice>().countPump * 3.0f + "/18 seconds\n" +
                         "Recommended = 30 pumps / 18 sec";
+                //if (pumpBox.GetComponent<PumpScriptPractice>().countPump * 3.0f >= 30)
+                //    background1.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+                //else
+                //    background1.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+
                 if (pumpBox.GetComponent<PumpScriptPractice>().countPump * 3.0f >= 30)
-                    background1.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+                    background1.GetComponent<TextMesh>().color = Color.green;
                 else
-                    background1.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+                    background1.GetComponent<TextMesh>().color = Color.red;
+
             }
         }
 	}
+
+    IEnumerator ShowMessageGood()
+    {
+        MobileText.SetActive(true);
+        MobileText.GetComponentInChildren<TextMesh>().color = Color.green;
+        MobileText.GetComponentInChildren<TextMesh>().text = "Good, you called 911";
+        yield return new WaitForSeconds(2);
+        MobileText.SetActive(false);
+
+    }
+    IEnumerator ShowMessageBad()
+    {
+        MobileText.SetActive(true);
+        MobileText.GetComponentInChildren<TextMesh>().color = Color.red;
+        MobileText.GetComponentInChildren<TextMesh>().text = "You forgot to call 911!";
+        yield return new WaitForSeconds(2);
+        MobileText.SetActive(false);
+
+    }
 }
