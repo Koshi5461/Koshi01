@@ -58,13 +58,13 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102838357435359016
+--- !u!1102 &1102640458935695574
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: HeadTiltSleep
+  m_Name: mixamo_com
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -77,7 +77,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0a9ddda5ba8cfe94d851986c858c5a63, type: 3}
+  m_Motion: {fileID: 7400000, guid: 6278fcddc96ee8943bcd29537bab7a18, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -92,8 +92,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1102838357435359016}
-    m_Position: {x: 239, y: 7, z: 0}
+    m_State: {fileID: 1102640458935695574}
+    m_Position: {x: 227, y: 56, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -103,7 +103,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: -48, y: 108, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102838357435359016}
+  m_DefaultState: {fileID: 1102640458935695574}
 --- !u!1107 &1107544059491061034
 AnimatorStateMachine:
   serializedVersion: 5
