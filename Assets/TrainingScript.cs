@@ -6,11 +6,11 @@ using UnityEngine;
 public class TrainingScript : MonoBehaviour {
 
 
-    string message = "Hello, we will be learning how to perform CPR today. Please touch this box to continue.";
+    string message = "Hello, we will be learning how to perform CPR today.\nPlease touch this box to continue.";
     public GameObject triggerBox;
     private int countPump = 0;
     public GameObject pumpBox;
-
+    public GameObject instructionBox;
 	// Use this for initialization
 	void Start () {
         pumpBox.SetActive(false);
@@ -36,6 +36,7 @@ public class TrainingScript : MonoBehaviour {
                 message = "Good! Press this button to continue";
             }
         }
+        instructionBox.GetComponent<TextMesh>().text = message;
 
     }
 
