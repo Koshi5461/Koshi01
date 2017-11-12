@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PumpScriptPractice : MonoBehaviour {
     public int countPump = 0;
+    float time = 0;
+
+    public int timeInSec = 0;
 
     // Use this for initialization
     void Start () {
@@ -12,8 +15,19 @@ public class PumpScriptPractice : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (countPump >= 1)
+        {
+            time += Time.deltaTime;
+            timeInSec = (int)time;
+            Debug.Log(timeInSec);
+        }
+        if (timeInSec == 6)
+        {
+
+            time = 0;
+            countPump = 0;
+        }
+    }
 
     void OnTriggerExit(Collider other)
     {

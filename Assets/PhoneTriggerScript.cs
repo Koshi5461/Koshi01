@@ -15,8 +15,12 @@ public class PhoneTriggerScript : MonoBehaviour {
 		
 	}
 
-    void onTriggerExit()
+    void OnTriggerEnter(Collider other)
     {
-        isPhonePicked = true;
+        //Debug.Log("triggered");
+        if (other.transform.name == "palm")
+        {
+            isPhonePicked = true;
+        }
     }
 }

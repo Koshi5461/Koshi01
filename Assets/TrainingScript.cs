@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrainingScript : MonoBehaviour {
 
@@ -19,6 +20,7 @@ public class TrainingScript : MonoBehaviour {
     public AudioClip source2;
     public AudioClip source3;
     public AudioClip source4;
+    
 
 
     bool isHandAnimationShownOnce = false;
@@ -90,11 +92,10 @@ public class TrainingScript : MonoBehaviour {
             //    message = "Good! Press this button to continue";
             //}
         }
-        //else if (triggerBox.GetComponent<TriggerScript>().step > 2 && pumpBox.GetComponent<PumpScript>().countPump >= 5)
-        //{
-        //    cprImage.SetActive(false);
-        //    message = "Good! Press this button to continue";
-        //}
+        else if (triggerBox.GetComponent<TriggerScript>().step > 2)
+        {
+            SceneManager.LoadScene(0);
+        }
         instructionBox.GetComponent<TextMesh>().text = message;
 
     }

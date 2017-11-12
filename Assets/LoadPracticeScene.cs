@@ -15,7 +15,7 @@ public class LoadPracticeScene : MonoBehaviour {
 		
 	}
 
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerExit(Collider other) {
         SceneManager.LoadScene(2);
     }
 }

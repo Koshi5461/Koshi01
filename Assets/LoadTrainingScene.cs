@@ -15,7 +15,34 @@ public class LoadTrainingScene : MonoBehaviour {
 		
 	}
 
-    void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other)
+    {
+        //StartCoroutine(LoadSceneTime());
+
+    }
+
+    void OnTriggerExit(Collider other) {
         SceneManager.LoadScene(1);
     }
+
+    //IEnumerator LoadSceneTime()
+    //{
+    //    this.transform.localPosition = this.transform.localPosition + new Vector3(0, 0, 0.1f);
+    //    yield return new WaitForSeconds(0.2f);
+    //    this.transform.localPosition = this.transform.localPosition + new Vector3(0, 0, 0.1f);
+    //    yield return new WaitForSeconds(0.2f);
+    //    this.transform.localPosition = this.transform.localPosition + new Vector3(0, 0, 0.1f);
+    //    yield return new WaitForSeconds(0.2f);
+    //    this.transform.localPosition = this.transform.localPosition + new Vector3(0, 0, 0.1f);
+    //    yield return new WaitForSeconds(0.2f);
+    //    this.transform.localPosition = this.transform.localPosition + new Vector3(0, 0, -0.1f);
+    //    yield return new WaitForSeconds(0.2f);
+    //    this.transform.localPosition = this.transform.localPosition + new Vector3(0, 0, -0.1f);
+    //    yield return new WaitForSeconds(0.2f);
+    //    this.transform.localPosition = this.transform.localPosition + new Vector3(0, 0, -0.1f);
+    //    yield return new WaitForSeconds(0.2f);
+    //    this.transform.localPosition = this.transform.localPosition + new Vector3(0, 0, -0.1f);
+    //    yield return new WaitForSeconds(0.2f);
+
+    //}
 }
