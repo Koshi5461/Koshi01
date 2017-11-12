@@ -6,6 +6,7 @@ public class TriggerScript : MonoBehaviour
 {
 
     public int step = 0;
+    public GameObject pumpBox;
 
     // Use this for initialization
     void Start()
